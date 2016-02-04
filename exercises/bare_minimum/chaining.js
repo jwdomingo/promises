@@ -109,7 +109,7 @@ var fetchProfileAndWriteToFile = function(readFilePath, writeFilePath) {
       return getGitHubProfileAsync(existingUser);
     })
     .then(function(userData) {
-      return writeFileAsync(writeFilePath, userData);
+      return writeFileAsync(writeFilePath, JSON.stringify(userData));
     })
     .catch(function(err) {
       console.error(err);
